@@ -1,0 +1,387 @@
+<h2 id="vanilla-javascript-quick-reference-cheatsheet">Vanilla JavaScript Quick Reference / Cheatsheet</h2>
+
+<h4 id="accessing-dom-elements">Accessing Dom Elements</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Returns a reference to the element by its ID.</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'someid'</span>);
+
+<span class="hljs-comment">// Returns an array-like object of all child elements which have all of the given class names.</span>
+<span class="hljs-built_in">document</span>.getElementsByClassName(<span class="hljs-string">'someclass'</span>);
+
+<span class="hljs-comment">// Returns an HTMLCollection of elements with the given tag name.</span>
+<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'LI'</span>);
+
+<span class="hljs-comment">// Returns the first element within the document that matches the specified group of selectors.</span>
+<span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelector</span>(<span class="hljs-string">'.someclass'</span>);
+
+<span class="hljs-comment">// Returns a list of the elements within the document (using depth-first pre-order traversal of the document's nodes)</span>
+<span class="hljs-comment">// that match the specified group of selectors.</span>
+<span class="hljs-built_in">document</span>.<span class="hljs-built_in">querySelectorAll</span>(<span class="hljs-string">'div.note, div.alert'</span>);
+</code></pre>
+<h4 id="grab-children-parent-node-s-">Grab Children/Parent Node(s)</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Get child nodes</span>
+<span class="hljs-keyword">var</span> <span class="hljs-keyword">stored</span> = document.getElementById(<span class="hljs-string">'someid'</span>);
+<span class="hljs-keyword">var</span> children = <span class="hljs-keyword">stored</span>.childNodes;
+
+<span class="hljs-comment">// Get parent node</span>
+<span class="hljs-keyword">var</span> parental = children.parentNode;
+</code></pre>
+<h4 id="create-new-dom-elements">Create New DOM Elements</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// create new elments</span>
+<span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">Heading</span> = document.createElement(<span class="hljs-string">'h1'</span>);
+<span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">Paragraph</span> = document.createElement(<span class="hljs-string">'p'</span>);
+
+<span class="hljs-comment">// create text nodes for new elements</span>
+<span class="hljs-keyword">var</span> h1Text= document.createTextNode(<span class="hljs-string">'This is a nice header text!'</span>);
+<span class="hljs-keyword">var</span> pText= document.createTextNode(<span class="hljs-string">'This is a nice paragraph text!'</span>);
+
+<span class="hljs-comment">// attach new text nodes to new elements</span>
+<span class="hljs-keyword">new</span><span class="hljs-type">Heading</span>.appendChild(h1Text);
+<span class="hljs-keyword">new</span><span class="hljs-type">Paragraph</span>.appendChild(pText);
+
+<span class="hljs-comment">// elements are now created and ready to be added to the DOM.</span>
+</code></pre>
+<h4 id="add-elements-to-the-dom">Add Elements to the DOM</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// grab element on page you want to add stuff to</span>
+<span class="hljs-keyword">var</span> firstHeading = document.getElementById(<span class="hljs-string">'firstHeading'</span>);
+
+<span class="hljs-comment">// add both new elements to the page as children to the element we stored in firstHeading.</span>
+firstHeading.appendChild(<span class="hljs-keyword">new</span><span class="hljs-type">Heading</span>);
+firstHeading.appendChild(<span class="hljs-keyword">new</span><span class="hljs-type">Paragraph</span>);
+
+<span class="hljs-comment">// can also insert before like so</span>
+
+<span class="hljs-comment">// get parent node of firstHeading</span>
+<span class="hljs-keyword">var</span> parent = firstHeading.parentNode;
+
+<span class="hljs-comment">// insert newHeading before FirstHeading</span>
+parent.insertBefore(<span class="hljs-keyword">new</span><span class="hljs-type">Heading</span>, firstHeading);
+</code></pre>
+<h4 id="add-elements-to-the-dom-cont-">Add Elements to the DOM cont.</h4>
+<p>Suppose you have the following HTML:</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'box1'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some example text<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">'box2'</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Some example text<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>You can insert another snippet of HTML between #box1 and #box2:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> box2 = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'box2'</span>);
+box2.insertAdjacentHTML(<span class="hljs-string">'beforebegin'</span>, <span class="hljs-string">'&lt;div&gt;&lt;p&gt;This gets inserted.&lt;/p&gt;&lt;/div&gt;'</span>);
+
+<span class="hljs-comment">// beforebegin - The HTML would be placed immediately before the element, as a sibling.</span>
+<span class="hljs-comment">// afterbegin - The HTML would be placed inside the element, before its first child.</span>
+<span class="hljs-comment">// beforeend - The HTML would be placed inside the element, after its last child.</span>
+<span class="hljs-comment">// afterend - The HTML would be placed immediately after the element, as a sibling.</span>
+</code></pre>
+<h4 id="add-remove-toggle-check-classes">Add/Remove/Toggle/Check Classes</h4>
+<pre><code class="lang-javascript">// grab element <span class="hljs-keyword">on</span> page you want <span class="hljs-keyword">to</span> <span class="hljs-keyword">use</span>
+var firstHeading = document.getElementById(<span class="hljs-symbol">'firstHeading</span>');
+
+// will remove foo <span class="hljs-keyword">if</span> it <span class="hljs-keyword">is</span> a class <span class="hljs-keyword">of</span> firstHeading
+firstHeading.classList.remove(<span class="hljs-symbol">'foo</span>');
+
+// will add the class <span class="hljs-symbol">'anotherClass</span>' <span class="hljs-keyword">if</span> one does <span class="hljs-keyword">not</span> already exist
+firstHeading.classList.add(<span class="hljs-symbol">'anotherclass</span>');
+
+// add <span class="hljs-keyword">or</span> remove multiple classes
+firstHeading.classList.add(<span class="hljs-symbol">'foo</span>', <span class="hljs-symbol">'bar</span>');
+firstHeading.classList.remove(<span class="hljs-symbol">'foo</span>', <span class="hljs-symbol">'bar</span>');
+
+// <span class="hljs-keyword">if</span> visible class <span class="hljs-keyword">is</span> set remove it, otherwise add it
+firstHeading.classList.toggle(<span class="hljs-symbol">'visible</span>');
+
+// will <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> it has class <span class="hljs-keyword">of</span> <span class="hljs-symbol">'foo</span>' <span class="hljs-keyword">or</span> <span class="hljs-literal">false</span> <span class="hljs-keyword">if</span> it does <span class="hljs-keyword">not</span>
+firstHeading.classList.contains(<span class="hljs-symbol">'foo</span>');
+</code></pre>
+<h4 id="add-remove-array-item">Add/Remove Array Item</h4>
+<pre><code class="lang-javascript">// create an empty<span class="hljs-built_in"> array
+</span>var myArray = [];
+
+// create<span class="hljs-built_in"> array </span>with items. Can store any type
+var myOtherArray = [myArray, true, 'a random string'];
+
+// call specific value in an<span class="hljs-built_in"> array
+</span>myOtherArray[0];
+// will<span class="hljs-built_in"> return </span>myArray
+
+// change value for this item
+myOtherArray[0] = false;
+// will now<span class="hljs-built_in"> return </span>false
+
+
+//<span class="hljs-built_in"> add </span>to end of<span class="hljs-built_in"> array
+</span>myOtherArray[myOtherArray.length] = 'new stuff';
+// will<span class="hljs-built_in"> return </span>the<span class="hljs-built_in"> new </span>item 'new stuff'
+
+//<span class="hljs-built_in"> or </span>you can use push()
+myOtherArray.push('new stuff');
+// will<span class="hljs-built_in"> return </span>new length of<span class="hljs-built_in"> array
+</span>
+// you can remove this last item by using pop()
+myOtherArray.pop();
+// will<span class="hljs-built_in"> return </span>the last item of the<span class="hljs-built_in"> array </span>and will have removed it from myOtherArray
+
+// shift<span class="hljs-built_in"> and </span>unshift will do the same for the begging of the Array
+myOtherArray.shift();
+// will remove<span class="hljs-built_in"> and </span>return first item of<span class="hljs-built_in"> array
+</span>
+myOtherArray.unshift(1,2);
+// this will<span class="hljs-built_in"> add </span>1<span class="hljs-built_in"> and </span>2 to beginning of<span class="hljs-built_in"> array </span>and<span class="hljs-built_in"> return </span>new length
+
+// you can use delete keyword but turn value to undefine<span class="hljs-built_in"> and </span>not shorten length. so we use splice()
+myOtherArray.splice(2, 1);
+// this will remove<span class="hljs-built_in"> and </span>return  the third item only.
+// first arg is where to start<span class="hljs-built_in"> and </span>second is how many things to splice. this example is 1.
+</code></pre>
+<h4 id="add-remove-object-properties">Add/Remove Object Properties</h4>
+<pre><code class="lang-javascript"><span class="hljs-comment">// create an object</span>
+<span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">Object</span> = {};
+
+<span class="hljs-comment">// add a property to object</span>
+<span class="hljs-keyword">new</span><span class="hljs-type">Object</span>.<span class="hljs-keyword">new</span><span class="hljs-type">PropName</span> = <span class="hljs-string">'super slick'</span>;
+
+<span class="hljs-comment">// or other syntax</span>
+<span class="hljs-keyword">new</span><span class="hljs-type">Object</span>[<span class="hljs-string">'other new prop name'</span>] = <span class="hljs-string">'mildly slick'</span>;
+
+<span class="hljs-comment">// Now newObject.newPropName will return 'super slick'</span>
+<span class="hljs-keyword">new</span><span class="hljs-type">Object</span>.<span class="hljs-keyword">new</span><span class="hljs-type">PropName</span>;
+
+<span class="hljs-comment">// now to delete</span>
+delete <span class="hljs-keyword">new</span><span class="hljs-type">Object</span>.<span class="hljs-keyword">new</span><span class="hljs-type">PropName</span>;
+</code></pre>
+<h4 id="conditionals">Conditionals</h4>
+<pre><code class="lang-javascript">// If Else statements
+<span class="hljs-built_in">var</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">var</span> b = <span class="hljs-number">2</span>;
+
+<span class="hljs-keyword">if</span> (a &lt; b) {
+  console.<span class="hljs-built_in">log</span>('the <span class="hljs-keyword">if</span> <span class="hljs-built_in">is</span> <span class="hljs-literal">true</span>!');
+} <span class="hljs-keyword">else</span> {
+  console.<span class="hljs-built_in">log</span>('the <span class="hljs-keyword">if</span> <span class="hljs-built_in">is</span> <span class="hljs-literal">false</span>!');
+}
+
+
+// Multi If Else statements
+<span class="hljs-built_in">var</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">var</span> b = <span class="hljs-number">2</span>;
+<span class="hljs-built_in">var</span> c = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">if</span> (a &gt; b) {
+  console.<span class="hljs-built_in">log</span>('a <span class="hljs-built_in">is</span> bigger than b');
+} <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a &gt; c) {
+  console.<span class="hljs-built_in">log</span>('but a <span class="hljs-built_in">is</span> bigger than c');
+} <span class="hljs-keyword">else</span> {
+  console.<span class="hljs-built_in">log</span>('a <span class="hljs-built_in">is</span> the smallest');
+}
+
+
+// Ternary operators. same as <span class="hljs-keyword">if</span> <span class="hljs-keyword">else</span>
+<span class="hljs-built_in">var</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-built_in">var</span> b = <span class="hljs-number">2</span>;
+
+a === b ? console.<span class="hljs-built_in">log</span>('The statement <span class="hljs-built_in">is</span> <span class="hljs-literal">true</span>') : console.<span class="hljs-built_in">log</span>('The statement <span class="hljs-built_in">is</span> <span class="hljs-literal">false</span>');
+
+// switch statements
+<span class="hljs-built_in">var</span> a = <span class="hljs-number">4</span>;
+switch (a) {
+  case 'Oranges':
+    console.<span class="hljs-built_in">log</span>('Orange? really?');
+    <span class="hljs-built_in">break</span>;
+  case <span class="hljs-number">1</span>:
+    console.<span class="hljs-built_in">log</span>('a <span class="hljs-built_in">is</span> <span class="hljs-built_in">equal</span> to <span class="hljs-number">1</span>.');
+    <span class="hljs-built_in">break</span>;
+  case <span class="hljs-number">2</span>:
+    console.<span class="hljs-built_in">log</span>('a <span class="hljs-built_in">is</span> <span class="hljs-built_in">equal</span> to <span class="hljs-number">2</span>.');
+    <span class="hljs-built_in">break</span>;
+  case <span class="hljs-number">3</span>:
+    console.<span class="hljs-built_in">log</span>('a <span class="hljs-built_in">is</span> <span class="hljs-built_in">equal</span> to <span class="hljs-number">3</span>.');
+    <span class="hljs-built_in">break</span>;
+  case <span class="hljs-number">4</span>:
+    console.<span class="hljs-built_in">log</span>('a <span class="hljs-built_in">is</span> <span class="hljs-built_in">equal</span> to <span class="hljs-number">4</span>.');
+    <span class="hljs-built_in">break</span>;
+  default:
+    console.<span class="hljs-built_in">log</span>('I run <span class="hljs-keyword">if</span> no one <span class="hljs-keyword">else</span> <span class="hljs-built_in">is</span> <span class="hljs-literal">true</span>.');
+}
+</code></pre>
+<h4 id="loops">Loops</h4>
+<pre><code class="lang-javascript"><span class="hljs-regexp">//</span> <span class="hljs-keyword">while</span> <span class="hljs-keyword">loop</span>
+var i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>) {
+  <span class="hljs-built_in">console</span>.log(i);
+  i += <span class="hljs-number">1</span>
+}
+
+
+<span class="hljs-regexp">//</span> <span class="hljs-keyword">do</span> <span class="hljs-keyword">while</span> <span class="hljs-keyword">loop</span>
+var i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">do</span> {
+  <span class="hljs-built_in">console</span>.log(i);
+  i += <span class="hljs-number">1</span>
+} <span class="hljs-keyword">while</span> (i &lt; <span class="hljs-number">10</span>)
+
+
+<span class="hljs-regexp">//</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">loop</span>
+<span class="hljs-keyword">for</span> (var i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+   <span class="hljs-built_in">console</span>.log(i);
+}
+
+<span class="hljs-regexp">//</span> <span class="hljs-keyword">for</span> <span class="hljs-keyword">in</span> statments
+var obj = {a:<span class="hljs-number">1</span>, b:<span class="hljs-number">2</span>, c:<span class="hljs-number">3</span>};
+
+<span class="hljs-keyword">for</span> (var prop <span class="hljs-keyword">in</span> obj) {
+  <span class="hljs-regexp">//</span> check <span class="hljs-keyword">if</span> property <span class="hljs-keyword">is</span> inherited <span class="hljs-keyword">or</span> <span class="hljs-keyword">not</span>
+  <span class="hljs-keyword">if</span> (obj.hasOwnProperty(prop)) {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'obj.'</span> + prop + <span class="hljs-string">' = '</span> + obj[prop]);
+  }
+}
+</code></pre>
+<h4 id="events-mdn-event-reference-https-developer-mozilla-org-en-us-docs-web-events-">Events (<a href="https://developer.mozilla.org/en-US/docs/Web/Events">MDN Event reference</a>)</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> <span class="hljs-keyword">new</span><span class="hljs-type">Element</span> = document.getElementsByTagName(<span class="hljs-string">'h1'</span>);
+
+<span class="hljs-keyword">new</span><span class="hljs-type">Element</span>.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span></span>() {
+  console.log(<span class="hljs-string">'clicked'</span>);
+};
+
+<span class="hljs-keyword">var</span> logEventType = <span class="hljs-function"><span class="hljs-keyword">function</span></span>(e) {
+    console.log(<span class="hljs-string">'event type:'</span>, e.type);
+};
+
+<span class="hljs-keyword">new</span><span class="hljs-type">Element</span>.addEventListener(<span class="hljs-string">'focus'</span>, logEventType, <span class="hljs-literal">false</span>);
+<span class="hljs-keyword">new</span><span class="hljs-type">Element</span>.removeEventListener(<span class="hljs-string">'focus'</span>, logEventType, <span class="hljs-literal">false</span>);
+
+window.onload = <span class="hljs-function"><span class="hljs-keyword">function</span></span>() {
+  console.log(<span class="hljs-string">'Im loaded'</span>);
+};
+</code></pre>
+<h4 id="timers">Timers</h4>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">simpleMessage</span>(<span class="hljs-params"></span>) </span>{
+  alert(<span class="hljs-string">'This is just a simple alert'</span>);
+}
+
+<span class="hljs-comment">// set time out</span>
+<span class="hljs-built_in">window</span>.setTimeout(simpleMessage, <span class="hljs-number">5000</span>);
+
+<span class="hljs-comment">// if you wanted to clear the timer.</span>
+<span class="hljs-keyword">var</span> timer = <span class="hljs-built_in">window</span>.setTimeout(simpleMessage, <span class="hljs-number">5000</span>);
+<span class="hljs-built_in">window</span>.clearTimeout(timer);
+
+<span class="hljs-comment">// set interval. will repeat every  5000ms</span>
+<span class="hljs-built_in">window</span>.setInterval(simpleMessage, <span class="hljs-number">5000</span>);
+
+<span class="hljs-comment">// if you wanted to clear the intervals.</span>
+
+<span class="hljs-keyword">var</span> intervalHandler = <span class="hljs-built_in">window</span>.setInterval(simpleMessage, <span class="hljs-number">5000</span>);
+<span class="hljs-built_in">window</span>.clearInterval(intervalHandle);
+</code></pre>
+<h4 id="type-checking">Type Checking</h4>
+<pre><code class="lang-javascript">var myNumber = <span class="hljs-number">1</span>;
+var myString = <span class="hljs-string">'some Text'</span>;
+var bools = <span class="hljs-literal">true</span>;
+var myArray = [];
+var myObj = {};
+var notNumber = NaN;
+var nullified = <span class="hljs-literal">null</span>;
+var undef;
+
+<span class="hljs-keyword">typeof</span> myNumber;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'number'</span>
+
+<span class="hljs-keyword">typeof</span> myString;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'string'</span>
+
+<span class="hljs-keyword">typeof</span> bools;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'boolean'</span>
+
+<span class="hljs-keyword">typeof</span> myArray;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'object'</span>.
+
+<span class="hljs-regexp">//</span> Not <span class="hljs-keyword">super</span> helpful so must check <span class="hljs-keyword">if</span> it has length property to see <span class="hljs-keyword">if</span> it <span class="hljs-keyword">is</span> an array.
+<span class="hljs-keyword">typeof</span> myArray === <span class="hljs-string">'object'</span> &amp;&amp; myArray.hasOwnProperty(<span class="hljs-string">'length'</span>);
+<span class="hljs-regexp">//</span> returns <span class="hljs-literal">true</span>
+
+<span class="hljs-keyword">typeof</span> myObj;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'object'</span>. Must <span class="hljs-keyword">do</span> the same test as above but expect <span class="hljs-literal">false</span> back from check.
+
+<span class="hljs-keyword">typeof</span> notNumber;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'number'</span>. <span class="hljs-keyword">this</span> <span class="hljs-keyword">is</span> confusing but returns <span class="hljs-keyword">this</span> as NaN <span class="hljs-keyword">is</span> part <span class="hljs-keyword">of</span> the <span class="hljs-built_in">global</span> Number object.
+
+<span class="hljs-regexp">//</span> must check <span class="hljs-keyword">if</span> isNaN()
+<span class="hljs-keyword">typeof</span> notNumber === <span class="hljs-string">'number'</span> &amp;&amp; isNaN(notNumber);
+<span class="hljs-regexp">//</span> returns <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> type <span class="hljs-keyword">of</span> <span class="hljs-keyword">is</span> <span class="hljs-string">'number'</span> <span class="hljs-keyword">and</span> <span class="hljs-keyword">is</span> still NaN
+
+<span class="hljs-keyword">typeof</span> undef;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'undefined'</span>
+
+undef === <span class="hljs-literal">undefined</span> &amp;&amp; <span class="hljs-keyword">typeof</span> undef === <span class="hljs-string">'undefined'</span>;
+<span class="hljs-regexp">//</span> returns <span class="hljs-string">'true'</span>
+
+notDeclared === <span class="hljs-literal">undefined</span>;
+<span class="hljs-regexp">//</span> -&gt; Uncaught ReferenceError: notDeclared <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
+</code></pre>
+<h4 id="add-default-arguments-to-a-function">Add default arguments to a function</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> myFunc = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">arg1=<span class="hljs-string">'default argument one'</span>, arg2=<span class="hljs-string">'default argument two'</span></span>) </span>{
+  <span class="hljs-built_in">console</span>.log(arg1 + <span class="hljs-string">" &amp; "</span> + arg2);
+};
+
+myFunc(<span class="hljs-literal">undefined</span>, <span class="hljs-string">'and a new value'</span>); <span class="hljs-comment">// logs 'default argument one &amp; and a new value'</span>
+</code></pre>
+<h4 id="throttle-or-debounce-functions-calls">Throttle or Debounce Functions Calls</h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> helpers = {
+  <span class="hljs-comment">/**
+   * debouncing, executes the function if there was no new event in $wait milliseconds
+   * @param func
+   * @param wait
+   * @param scope
+   * @returns {Function}
+   */</span>
+  debounce: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">func, wait, scope</span>) </span>{
+    <span class="hljs-keyword">var</span> timeout;
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">var</span> context = scope || <span class="hljs-keyword">this</span>, args = <span class="hljs-built_in">arguments</span>;
+      <span class="hljs-keyword">var</span> later = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        timeout = <span class="hljs-literal">null</span>;
+        func.apply(context, args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  },
+
+  <span class="hljs-comment">/**
+   * In case of a "storm of events", this executes once every $threshold
+   * @param fn
+   * @param threshold
+   * @param scope
+   * @returns {Function}
+   */</span>
+  throttle: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">fn, threshold, scope</span>) </span>{
+    threshold || (threshold = <span class="hljs-number">250</span>);
+    <span class="hljs-keyword">var</span> last, deferTimer;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-keyword">var</span> context = scope || <span class="hljs-keyword">this</span>;
+      <span class="hljs-keyword">var</span> now = +<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>, args = <span class="hljs-built_in">arguments</span>;
+
+      <span class="hljs-keyword">if</span> (last &amp;&amp; now &lt; last + threshold) {
+        <span class="hljs-comment">// Hold on to it</span>
+        clearTimeout(deferTimer);
+        deferTimer = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+          last = now;
+          fn.apply(context, args);
+        }, threshold);
+      } <span class="hljs-keyword">else</span> {
+        last = now;
+        fn.apply(context, args);
+      }
+    };
+  }
+};
+
+<span class="hljs-keyword">var</span> resizeHandler = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'do stuff'</span>);
+};
+
+<span class="hljs-comment">// Debounce by waiting 0.25s (250ms) with "this" context</span>
+<span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">'resize'</span>, helpers.debounce(resizeHandler, <span class="hljs-number">250</span>, <span class="hljs-keyword">this</span>));
+</code></pre>

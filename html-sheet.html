@@ -1,0 +1,665 @@
+<h1 id="html-cheat-sheet">HTML Cheat Sheet</h1>
+<p>A reminder of HTML elements.</p>
+
+<h2 id="minimal-page">Minimal page</h2>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- content here --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h2 id="head">Head</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">base</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"base-url"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"style.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span>&gt;</span><span class="css">
+        <span class="hljs-comment">/* CSS code */</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"script.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+        <span class="hljs-comment">// Javascript code</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"keywords"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"keywords"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"description"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"description"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"author"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"name"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"refresh"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"10"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>title</strong></td>
+<td>page title</td>
+</tr>
+<tr>
+<td><strong>base</strong></td>
+<td>base url for all links</td>
+</tr>
+<tr>
+<td><strong>link</strong></td>
+<td>link to external source</td>
+</tr>
+<tr>
+<td><strong>style</strong></td>
+<td>CSS inside HTML page</td>
+</tr>
+<tr>
+<td><strong>script</strong></td>
+<td>Javascript code</td>
+</tr>
+<tr>
+<td><strong>meta</strong></td>
+<td>metadata</td>
+</tr>
+<tr>
+<td><strong>meta</strong> <em>http-equiv</em>=&quot;refresh&quot; <em>content</em>=&quot;10&quot;</td>
+<td>auto-refresh page in 10s</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text-content">Text content</h2>
+<h3 id="headings">Headings</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Main heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- etc --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>Level-6 heading<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>h1</strong></td>
+<td>main heading</td>
+</tr>
+<tr>
+<td><strong>h6</strong></td>
+<td>least important heading</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paragraphs">Paragraphs</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Paragraph.<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+Other line.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Other paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">hr</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>See the line above.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>p</strong></td>
+<td>paragraph</td>
+</tr>
+<tr>
+<td><strong>br</strong></td>
+<td>line break</td>
+</tr>
+<tr>
+<td><strong>hr</strong></td>
+<td>horizontal line</td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatting">Formatting</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">em</span>&gt;</span>Formatting<span class="hljs-tag">&lt;/<span class="hljs-name">em</span>&gt;</span> is <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>important<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span> !
+(a+b)<span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span> = a<span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span> + b<span class="hljs-tag">&lt;<span class="hljs-name">sup</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span> + 2ab
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>sub</strong></td>
+<td>subscript</td>
+</tr>
+<tr>
+<td><strong>sup</strong></td>
+<td>superscript</td>
+</tr>
+<tr>
+<td><strong>em</strong></td>
+<td>emphasize</td>
+</tr>
+<tr>
+<td><strong>strong</strong></td>
+<td>important</td>
+</tr>
+<tr>
+<td><strong>mark</strong></td>
+<td>highlighted</td>
+</tr>
+<tr>
+<td><strong>small</strong></td>
+<td>small</td>
+</tr>
+<tr>
+<td><strong>i</strong></td>
+<td>italic</td>
+</tr>
+<tr>
+<td><strong>b</strong></td>
+<td>bold</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quotes">Quotes</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">cite</span>&gt;</span>This book<span class="hljs-tag">&lt;/<span class="hljs-name">cite</span>&gt;</span> was written by this author.
+<span class="hljs-tag">&lt;<span class="hljs-name">q</span> <span class="hljs-attr">cite</span>=<span class="hljs-string">"url"</span>&gt;</span>quotation<span class="hljs-tag">&lt;/<span class="hljs-name">q</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">blockquote</span> <span class="hljs-attr">cite</span>=<span class="hljs-string">"url"</span>&gt;</span>
+Lorem ipsum<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+Lorem ipsum
+<span class="hljs-tag">&lt;/<span class="hljs-name">blockquote</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>cite</strong></td>
+<td>title of a work</td>
+</tr>
+<tr>
+<td><strong>q</strong></td>
+<td>inline quotation</td>
+</tr>
+<tr>
+<td><strong>blockquote</strong></td>
+<td>quotation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="content">Content</h2>
+<h3 id="links">Links</h3>
+<pre><code class="lang-html">&lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"url"</span>&gt;link&lt;/a&gt;
+&lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"url"</span> target=_blank&gt;open <span class="hljs-keyword">in</span> <span class="hljs-selector-tag">a</span> new window&lt;/a&gt;
+
+&lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"#comments"</span>&gt;watch comments&lt;/a&gt;
+&lt;<span class="hljs-selector-tag">h2</span> id=<span class="hljs-string">"comments"</span>&gt;comments&lt;/h2&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>a</strong></td>
+<td>hyperlink</td>
+</tr>
+</tbody>
+</table>
+<h3 id="images">Images</h3>
+<pre><code class="lang-html">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"image.png"</span> alt=<span class="hljs-string">"description"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"300"</span> height=<span class="hljs-string">"200"</span> /&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>img</strong></td>
+<td>image</td>
+</tr>
+</tbody>
+</table>
+<h3 id="blocks">Blocks</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>block<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>inline<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>div</strong></td>
+<td>block-level element</td>
+</tr>
+<tr>
+<td><strong>span</strong></td>
+<td>inline element</td>
+</tr>
+</tbody>
+</table>
+<h2 id="lists">Lists</h2>
+<h3 id="unordered-list">Unordered list</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>item<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ul</strong></td>
+<td>unordered list</td>
+</tr>
+<tr>
+<td><strong>li</strong></td>
+<td>list item</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ordored-list">Ordored list</h3>
+<pre><code class="lang-html">&lt;ol&gt;
+    &lt;<span class="hljs-built_in">li</span>&gt;<span class="hljs-built_in">first</span>&lt;/<span class="hljs-built_in">li</span>&gt;
+    &lt;<span class="hljs-built_in">li</span>&gt;<span class="hljs-built_in">second</span>&lt;/<span class="hljs-built_in">li</span>&gt;
+    &lt;<span class="hljs-built_in">li</span>&gt;<span class="hljs-built_in">third</span>&lt;/<span class="hljs-built_in">li</span>&gt;
+&lt;/ol&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ol</strong></td>
+<td>ordered list</td>
+</tr>
+<tr>
+<td><strong>li</strong></td>
+<td>list item</td>
+</tr>
+</tbody>
+</table>
+<h3 id="definition-list">Definition list</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>term<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>definition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>term<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>definition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">dt</span>&gt;</span>term<span class="hljs-tag">&lt;/<span class="hljs-name">dt</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">dd</span>&gt;</span>definition<span class="hljs-tag">&lt;/<span class="hljs-name">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dl</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>dl</strong></td>
+<td>definition list</td>
+</tr>
+<tr>
+<td><strong>dt</strong></td>
+<td>term</td>
+</tr>
+<tr>
+<td><strong>dd</strong></td>
+<td>definition</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tables">Tables</h2>
+<h3 id="basic-table">Basic table</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>heading 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>heading 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 1, column 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 1, column 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 2, column 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 2, column 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>table</strong></td>
+<td>table</td>
+</tr>
+<tr>
+<td><strong>tr</strong></td>
+<td>table row</td>
+</tr>
+<tr>
+<td><strong>th</strong></td>
+<td>table heading</td>
+</tr>
+<tr>
+<td><strong>td</strong></td>
+<td>table cell</td>
+</tr>
+</tbody>
+</table>
+<h3 id="advanced-table">Advanced table</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">caption</span>&gt;</span>caption<span class="hljs-tag">&lt;/<span class="hljs-name">caption</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">colgroup</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">"2"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"..."</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">col</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"..."</span> /&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">colgroup</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>heading 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>heading 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>heading 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tfoot</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>footer 1<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>footer 2<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>footer 3<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tfoot</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 1, column 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 1, column 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 1, column 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 2, column 1<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 2, column 2<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>line 2, column 3<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>caption</strong></td>
+<td>caption</td>
+</tr>
+<tr>
+<td><strong>colgroup</strong></td>
+<td>defines groups of columns</td>
+</tr>
+<tr>
+<td><strong>col</strong></td>
+<td>defines column&#39;s properties</td>
+</tr>
+<tr>
+<td><strong>thead</strong></td>
+<td>groups headings together</td>
+</tr>
+<tr>
+<td><strong>tfoot</strong></td>
+<td>groups footers together</td>
+</tr>
+<tr>
+<td><strong>tbody</strong></td>
+<td>groups other rows</td>
+</tr>
+</tbody>
+</table>
+<h2 id="forms">Forms</h2>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"url"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"post"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">legend</span>&gt;</span>Who are you ?<span class="hljs-tag">&lt;/<span class="hljs-name">legend</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Login :<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"login"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"pswd"</span>&gt;</span>Password :<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"pswd"</span> /&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sex"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"male"</span> /&gt;</span>Male<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"radio"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"sex"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"female"</span> /&gt;</span>Female<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">fieldset</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>Your favorite color : <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"color"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>red<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>green<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">option</span>&gt;</span>blue<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"available"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"monday"</span> /&gt;</span>Monday<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"checkbox"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"available"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"tuesday"</span> /&gt;</span>Tuesday<span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"comments"</span> <span class="hljs-attr">rows</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">cols</span>=<span class="hljs-string">"30"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Write your comments here"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span>/&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Button text"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>form</strong></td>
+<td>form</td>
+</tr>
+<tr>
+<td><strong>label</strong></td>
+<td>label for input</td>
+</tr>
+<tr>
+<td><strong>fieldset</strong></td>
+<td>group inputs together</td>
+</tr>
+<tr>
+<td><strong>legend</strong></td>
+<td>legend for fieldset</td>
+</tr>
+<tr>
+<td><strong>input</strong> type=&quot;<em>text</em>&quot;</td>
+<td>text input</td>
+</tr>
+<tr>
+<td><strong>input</strong> type=&quot;<em>password</em>&quot;</td>
+<td>password input</td>
+</tr>
+<tr>
+<td><strong>input</strong> type=&quot;<em>radio</em>&quot;</td>
+<td>radio button</td>
+</tr>
+<tr>
+<td><strong>input</strong> type=&quot;<em>checkbox</em>&quot;</td>
+<td>checkbox</td>
+</tr>
+<tr>
+<td><strong>input</strong> type=&quot;<em>submit</em>&quot;</td>
+<td>send form</td>
+</tr>
+<tr>
+<td><strong>select</strong></td>
+<td>drop-down list</td>
+</tr>
+<tr>
+<td><strong>option</strong></td>
+<td>drop-down list item</td>
+</tr>
+<tr>
+<td><strong>optgroup</strong></td>
+<td>group of drop-down list items</td>
+</tr>
+<tr>
+<td><strong>datalist</strong></td>
+<td>autocompletion list</td>
+</tr>
+<tr>
+<td><strong>textarea</strong></td>
+<td>large text input</td>
+</tr>
+</tbody>
+</table>
+<h2 id="html5-semantic">HTML5 Semantic</h2>
+<h3 id="page-layout">Page layout</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>My website<span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"page1"</span>&gt;</span>Page 1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"page2"</span>&gt;</span>Page 2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"page3"</span>&gt;</span>Page 3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+    Hello everybody, Welcome to my website !
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>
+        My article
+    <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">aside</span>&gt;</span>
+    Writen by me
+<span class="hljs-tag">&lt;/<span class="hljs-name">aside</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comments"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>Comment 1<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">article</span>&gt;</span>Comment 2<span class="hljs-tag">&lt;/<span class="hljs-name">article</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">footer</span>&gt;</span>
+Copyright notice
+<span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>header</strong></td>
+<td>header of document or section</td>
+</tr>
+<tr>
+<td><strong>footer</strong></td>
+<td>footer of document or section</td>
+</tr>
+<tr>
+<td><strong>section</strong></td>
+<td>section</td>
+</tr>
+<tr>
+<td><strong>article</strong></td>
+<td>article, forum post, blog post, comment</td>
+</tr>
+<tr>
+<td><strong>aside</strong></td>
+<td>aside content related to surrounding content</td>
+</tr>
+<tr>
+<td><strong>nav</strong></td>
+<td>navigation links</td>
+</tr>
+</tbody>
+</table>
+<h3 id="new-elements">New elements</h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">figure</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"image.png"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"figure 1"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">figcaption</span>&gt;</span>Figure 1<span class="hljs-tag">&lt;/<span class="hljs-name">figcaption</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">figure</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">details</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">summary</span>&gt;</span>Declaration of M. X on <span class="hljs-tag">&lt;<span class="hljs-name">time</span> <span class="hljs-attr">datetime</span>=<span class="hljs-string">"2013-12-25"</span>&gt;</span>Christmas day<span class="hljs-tag">&lt;/<span class="hljs-name">time</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">summary</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>M. X said...<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">details</span>&gt;</span>
+
+Downloading progress : <span class="hljs-tag">&lt;<span class="hljs-name">progress</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"53"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"100"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">progress</span>&gt;</span>
+Disk space : <span class="hljs-tag">&lt;<span class="hljs-name">meter</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"62"</span> <span class="hljs-attr">min</span>=<span class="hljs-string">"10"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"350"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">meter</span>&gt;</span>
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>tag</th>
+<th>element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>figure</strong></td>
+<td>an illustration</td>
+</tr>
+<tr>
+<td><strong>figcaption</strong></td>
+<td>caption of a figure element</td>
+</tr>
+<tr>
+<td><strong>details</strong></td>
+<td>details that can be shown or hidden</td>
+</tr>
+<tr>
+<td><strong>summary</strong></td>
+<td>visible heading of a details element</td>
+</tr>
+<tr>
+<td><strong>progress</strong></td>
+<td>progress of a task</td>
+</tr>
+<tr>
+<td><strong>meter</strong></td>
+<td>display a gauge</td>
+</tr>
+<tr>
+<td><strong>time</strong></td>
+<td>machine-readable time indication</td>
+</tr>
+</tbody>
+</table>
